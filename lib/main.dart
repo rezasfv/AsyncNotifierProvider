@@ -1,3 +1,4 @@
+import 'package:async1/pages/async_activity/async_activity_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -5,11 +6,7 @@ import 'pages/counter/counter_page.dart';
 import 'widgets/custom_button.dart';
 
 void main() {
-  runApp(
-    const ProviderScope(
-      child: MyApp(),
-    ),
-  );
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -35,18 +32,14 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('AsyncNotifierProvider'),
-      ),
+      appBar: AppBar(title: const Text('AsyncNotifierProvider')),
       body: Center(
         child: ListView(
           padding: const EdgeInsets.all(20),
           shrinkWrap: true,
           children: const [
-            CustomButton(
-              title: 'Counter',
-              child: CounterPage(),
-            ),
+            CustomButton(title: 'Counter', child: CounterPage()),
+            CustomButton(title: 'Async Activity', child: AsyncActivityPage()),
           ],
         ),
       ),
